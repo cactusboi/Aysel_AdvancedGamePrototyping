@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
             float jump = Input.GetAxis("JumpFront") *Time.deltaTime * 5.0f;
 
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            transform.Translate(0, jump, 0);
+            transform.Translate(jump, 0, 0);
 
             rb.AddForce(movement * speed);
         }
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             float jump = Input.GetAxis("JumpBack") * Time.deltaTime * 5.0f;
 
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            transform.Translate(0, jump, 0);
+            transform.Translate(jump, 0, 0);
 
             rb.AddForce(movement * speed);
         }
