@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     void Update()
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
         {
             float moveHorizontal = Input.GetAxis("HorizontalFront");
             float moveVertical = Input.GetAxis("VerticalFront");
-            float jump = Input.GetAxis("JumpFront") *Time.deltaTime * 5.0f;
+            float jump = Input.GetAxis("JumpFront") * Time.deltaTime * 5.0f;
 
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
             transform.Translate(jump, 0, 0);
