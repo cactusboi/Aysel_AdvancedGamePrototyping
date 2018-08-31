@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
             transform.Translate(jump, 0, 0);
 
+            
             rb.AddForce(movement * speed);
         }
 
