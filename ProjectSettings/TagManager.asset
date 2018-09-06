@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Points
   - Floor
+  - PointsRemove
   layers:
   - Default
   - TransparentFX

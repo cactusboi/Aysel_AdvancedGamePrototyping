@@ -24,5 +24,13 @@ public class ObstacleCollision : MonoBehaviour
             ScoreManager.Score += ScoreValue;
             Destroy(other);
         }
+
+        if (other.gameObject.tag == "PointsRemove")
+        {
+
+            Debug.Log("removed 250 points");
+            ScoreManager.Score -= ScoreValue;
+            Destroy(other);
+        }
     }
 }
