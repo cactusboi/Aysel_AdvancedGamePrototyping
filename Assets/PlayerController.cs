@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
             transform.Translate(0, jump, 0);
 
+            if (movement != Vector3.zero)
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.1F);
+
             rb.AddForce(movement * speed);
         }
 
@@ -48,30 +51,3 @@ public class PlayerController : MonoBehaviour
 }
 
 
-/* 
- void Update()
- {
-
-     if (gameObject.tag == "PlayerBack")
-     {
-         var x = Input.GetAxis("HorizontalBack") * Time.deltaTime * 10.0f;
-         var y = Input.GetAxis("JumpBack") * Time.deltaTime * 10.0f;
-         var z = Input.GetAxis("VerticalBack") * Time.deltaTime * 10.0f;
-
-         transform.Translate(x, 0, 0);
-         transform.Translate(0, y, 0);
-         transform.Translate(0, 0, z);
-     }
-
-     if (gameObject.tag == "PlayerFront")
-     {
-         var x = Input.GetAxis("HorizontalFront") * Time.deltaTime * 10.0f;
-         var y = Input.GetAxis("JumpFront") * Time.deltaTime * 10.0f;
-         var z = Input.GetAxis("VerticalFront") * Time.deltaTime * 10.0f;
-
-         transform.Translate(x, 0, 0);
-         transform.Translate(0, y, 0);
-         transform.Translate(0, 0, z);
-     }
- }
-}*/

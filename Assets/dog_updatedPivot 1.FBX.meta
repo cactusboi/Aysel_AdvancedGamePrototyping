@@ -1,16 +1,18 @@
 fileFormatVersion: 2
-guid: 7cafa8098d1c034438ea908ccc0bbbdc
+guid: 4748b3b0c2dd86941a34384e35387f4e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Bone005
-    100002: Bone006
-    100004: dog
-    100006: //RootNode
-    400000: Bone005
-    400002: Bone006
-    400004: dog
-    400006: //RootNode
+    100000: Bone001
+    100002: Bone003
+    100004: Bone005
+    100006: dog
+    100008: //RootNode
+    400000: Bone001
+    400002: Bone003
+    400004: Bone005
+    400006: dog
+    400008: //RootNode
     2100000: No Name
     4300000: dog
     9500000: //RootNode
