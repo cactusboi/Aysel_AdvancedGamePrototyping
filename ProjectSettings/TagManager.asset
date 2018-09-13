@@ -10,6 +10,7 @@ TagManager:
   - Points
   - Floor
   - PointsRemove
+  - PlayerMid
   layers:
   - Default
   - TransparentFX
