@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-
     private Rigidbody rb;
 
     void Start()
@@ -43,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
             rb.AddForce(movement * speed);
         }
+
         if (Input.GetKey("space"))
         {
             SceneManager.LoadScene(0);

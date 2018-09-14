@@ -7,7 +7,9 @@ public class StretchyCollider : MonoBehaviour {
     public Transform FrontBone;
     public Transform BackBone;
     public BoxCollider ColliderToStretch;
-    public Rigidbody DogMid;
+    public Rigidbody MidBone;
+    public Rigidbody MidCollider;
+    public Transform MidBoneTrans;
     public float StretchRatio;
 
 	// Use this for initialization
@@ -19,7 +21,17 @@ public class StretchyCollider : MonoBehaviour {
 	void Update () {
 
         ColliderToStretch.size = new Vector3(ColliderToStretch.size.x, ColliderToStretch.size.y, Vector3.Distance(FrontBone.position, BackBone.position) * StretchRatio);
-        DogMid.position = ((FrontBone.transform.position + BackBone.transform.position) / 2);
+        //MidBoneTrans.position = ((FrontBone.transform.position + BackBone.transform.position) / 2);
+        //MidCollider.position = MidBone.position;
+        //navmesh dude to the position of midbone.position in the update
+
 
     }
+
+    private void FixedUpdate()
+    {
+        MidBone.MovePosition(((FrontBone.transform.position + BackBone.transform.position) / 2) * (20 * Time.deltaTime));
+    }
 }
+
+    
