@@ -17,18 +17,17 @@ public class EndScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         TierCalc = (ScoreManager.Score - ScoreManager.TotalTime);
-        Debug.Log("end");
         EndCanvas.SetActive(true);
-        if (TierCalc >= 1000)
+        if (TierCalc >= 1100)
         {
             TierText.text = "You got a gold medal!";
         }
 
-        if (TierCalc >= 500 && TierCalc < 1000)
+        if (TierCalc >= 500 && TierCalc < 1099)
         {
             TierText.text = "You got a silver medal.";
         }
-        else
+		if (TierCalc < 500)
         {
             TierText.text = "You got a bronze medal.";
         }
