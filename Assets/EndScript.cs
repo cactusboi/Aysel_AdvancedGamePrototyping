@@ -1,40 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EndScript : MonoBehaviour {
+public class EndScript : MonoBehaviour
+{
 
     private float TierCalc;
-	void Start () {
-		
-	}
+    public Text TierText;
+    public GameObject EndCanvas;
+
+    void Start()
+    {
+
+    }
     void OnTriggerEnter(Collider other)
     {
         TierCalc = (ScoreManager.Score - ScoreManager.TotalTime);
-        if ((other.gameObject.tag == "PlayerFront") || (other.gameObject.tag == "PlayerFront"))
+        Debug.Log("end");
+        EndCanvas.SetActive(true);
+        if (TierCalc >= 1000)
         {
-            if (TierCalc >= 1000)
-            {
-                Debug.Log("gold");
-                //ScoreManager.Score += ScoreValue;
-                //Destroy(other);
-            }
-
-            if (TierCalc >= 500 && TierCalc < 1000)
-            {
-                Debug.Log("silver");
-                //ScoreManager.Score += ScoreValue;
-                //Destroy(other);
-            }
-            else
-            {
-                Debug.Log("Bronze");
-            }
+            TierText.text = "You got a gold medal!";
         }
+
+        if (TierCalc >= 500 && TierCalc < 1000)
+        {
+            TierText.text = "You got a silver medal.";
+        }
+        else
+        {
+            TierText.text = "You got a bronze medal.";
+        }
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 }

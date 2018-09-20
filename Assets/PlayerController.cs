@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.R)))
         {
             SceneManager.LoadScene(0);
+            Time.timeScale = 1;
         }
     }
 }
