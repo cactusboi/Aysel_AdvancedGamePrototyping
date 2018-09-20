@@ -6,9 +6,10 @@ public class ScoreManager : MonoBehaviour
 {
     public static float Score;
     private float BeginTime;
+    private float TotalTime;
 
-    Text ScoreText;
-    Text TimeText;
+    public Text ScoreText;
+    public Text TimeText;
 
     void Start()
     {
@@ -16,7 +17,8 @@ public class ScoreManager : MonoBehaviour
     }
     void Awake()
     {
-        ScoreText = GetComponent<Text>();
+        //ScoreText = GetComponent<Text>();
+        //TimeText = GetComponent<Text>();
         
         Score = 0f;
     }
@@ -26,6 +28,7 @@ public class ScoreManager : MonoBehaviour
     {
        
         ScoreText.text = "Score: " + Score;
-        TimeText.text = "Time:" + (Time.time - BeginTime);
+        TotalTime = Time.time - BeginTime;
+        TimeText.text = "Time:" + TotalTime.ToString("F0") + " seconds";
     }
 }
