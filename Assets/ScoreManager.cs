@@ -4,16 +4,21 @@ using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int Score;
+    public static float Score;
+    private float BeginTime;
 
     Text ScoreText;
+    Text TimeText;
 
-
+    void Start()
+    {
+        BeginTime = Time.time;
+    }
     void Awake()
     {
         ScoreText = GetComponent<Text>();
         
-        Score = 0;
+        Score = 0f;
     }
 
 
@@ -21,5 +26,6 @@ public class ScoreManager : MonoBehaviour
     {
        
         ScoreText.text = "Score: " + Score;
+        TimeText.text = "Time:" + (Time.time - BeginTime);
     }
 }
