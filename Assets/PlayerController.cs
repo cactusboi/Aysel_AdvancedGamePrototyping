@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(movement * speed);
         }
 
-        if (Input.GetKey("space"))
+        if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.R)))
         {
             SceneManager.LoadScene(0);
         }
