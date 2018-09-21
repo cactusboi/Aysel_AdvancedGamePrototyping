@@ -18,12 +18,12 @@ public class EndScript : MonoBehaviour
     {
         TierCalc = (ScoreManager.Score - ScoreManager.TotalTime);
         EndCanvas.SetActive(true);
-        if (TierCalc >= 1100)
+        if (TierCalc >= 1500)
         {
             TierText.text = "You got a gold medal!";
         }
 
-        if (TierCalc >= 500 && TierCalc < 1099)
+        if (TierCalc >= 500 && TierCalc < 1499)
         {
             TierText.text = "You got a silver medal.";
         }
